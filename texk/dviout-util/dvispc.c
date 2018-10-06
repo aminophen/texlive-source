@@ -664,12 +664,6 @@ skip: ;
             break;
 
         case 1:
-            if(fnum == 2)   /* non-empty stdin, redirected stdout */
-                /* [TODO] ??? */
-{
-                fprintf(stderr, "[DEBUG] point C\n");
-                usage(1);
-}
             if(!fnum){  /* empty stdin, free stdout */
                 /* if EXE2DVI, the only argument might be outfile,
                    but no input available; nothing I can do */
@@ -690,10 +684,14 @@ skip: ;
             }else
                 /* if fp_out == NULL, non-empty stdin and free stdout;
                     -> the only argument = outfile (input from stdin)
-                   otherwise fp_in == NULL, empty stdin and redirected stdout;
+                   otherwise, redirected stdout;
                     -> the only argument = infile
+                       if fnum == 2, stdin will be ignored but don't care!
                        (output to overwrite for EXE2INDEP, stdout for others) */
+{
                 strcpy((fp_out == NULL)?outfile:infile, argv[argc-1]);
+                fprintf(stderr, "[DEBUG] point C\n");
+}
             break;
 
         case 2:
