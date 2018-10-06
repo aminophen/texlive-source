@@ -669,12 +669,12 @@ skip: ;
                     strcpy(outfile, argv[argc-1]);
                 else
                     fp_out = stdout;
-            }else   /* if fp_out == NULL, free stdout; otherwise empty stdin */
-                /* [TODO] to be confirmed
-                      if non-empty stdin, the only argument = outfile
-                        (input is taken from stdin)
-                      if redirected stdout, the only argument = infile
-                        (output goes to stdout for EXE2DVI, overwrite for EXE2INDEP) */
+            }else
+                /* if fp_out == NULL, non-empty stdin and free stdout;
+                    -> the only argument = outfile (input from stdin)
+                   otherwise fp_in == NULL, empty stdin and redirected stdout;
+                    -> the only argument = infile
+                       (output to overwrite for EXE2INDEP, stdout for others) */
                 strcpy((fp_out == NULL)?outfile:infile, argv[argc-1]);
             break;
 
