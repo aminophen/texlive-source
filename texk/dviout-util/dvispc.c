@@ -664,6 +664,8 @@ skip: ;
             break;
 
         case 1:
+         /* if(fnum == 2)
+                usage(1);   */
             if(!fnum){  /* empty stdin, free stdout */
                 /* if EXE2DVI, the only argument might be outfile,
                    but no input available; nothing I can do */
@@ -682,11 +684,11 @@ skip: ;
                 else
                     fp_out = stdout;
             }else
-                /* if fp_out == NULL, non-empty stdin and free stdout;
+                /* if fp_out == NULL, non-empty stdin and free stdout
                     -> the only argument = outfile (input from stdin)
-                   otherwise, redirected stdout;
+                   otherwise, redirected stdout
                     -> the only argument = infile
-                       if fnum == 2, stdin will be ignored but don't care!
+                       if fnum == 2, non-empty stdin will be discarded but don't care!
                        (output to overwrite for EXE2INDEP, stdout for others) */
 {
                 strcpy((fp_out == NULL)?outfile:infile, argv[argc-1]);
@@ -695,12 +697,13 @@ skip: ;
             break;
 
         case 2:
-            if(fp_in == NULL){
-                /* prioritize filename arguments */
-                strcpy(infile, argv[argc-2]);
-                strcpy(outfile, argv[argc-1]);
-                break;
-            }   /* else non-empty stdin already given, confused! */
+         /* if(fp_in == NULL){  */
+            /* prioritize filename arguments;
+               if fp_in != NULL, non-empty stdin will be discarded but don't care! */
+            strcpy(infile, argv[argc-2]);
+            strcpy(outfile, argv[argc-1]);
+            break;
+         /*   }     */
         default:
 {
                 fprintf(stderr, "[DEBUG] point E\n");
@@ -712,7 +715,7 @@ skip: ;
     if(fp_out && (f_mode == EXE2DVI || (f_mode & EXE2INDEP)))
         setmode( fileno( stdout ), O_BINARY);
 #endif
-    if(fp_in && f_mode != EXE2DVI){
+    if(fp_in && !infile && f_mode != EXE2DVI){
         fprintf(stderr, "*** stdin is a DVI file. ***\n"
             "*** Random Access may not be supported! ***\n");
 #ifndef UNIX
@@ -723,7 +726,7 @@ skip: ;
     if(f_mode == EXE2DVI){
         /* use infile if given, otherwise use existing fp_in (= non-empty stdin)
            note that fp_in and infile are exclusive (already checked above) */
-        if(fp_in == NULL){
+        if(fp_in == NULL || infile){
             fp_in = fopen(infile, READ_TEXT);
             if(fp_in == NULL){
                 fprintf(stderr, "Cannot open %s\n", infile);
@@ -792,7 +795,7 @@ same:       strcpy(outfile, infile);
 #endif
             goto same;
     }
-    if(fp_in){
+    if(fp_in && !infile){
         dvi_info.file_ptr = fp_in;
         dvi_info.file_name = "stdin";
     }else if ((dvi_info.file_ptr = fopen(dvi_info.file_name, READ_BINARY)) == NULL){
