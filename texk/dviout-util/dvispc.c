@@ -619,6 +619,9 @@ skip: ;
     /* now, i = (number of optional arguments) + 1
        cf.  argc = (number of all arguments) + 1
         {argv[0] is the program name itself} ^^^ */
+    fprintf(stderr, "[DEBUG] argc: %d, options: %d\n", argc, i);
+    for(fnum=0;fnum<argc;fnum++)
+        fprintf(stderr, "[DEBUG] arg %d: %s\n", fnum, argv[fnum]);
 
     if(!f_mode) f_mode = EXE2INDEP; /* default mode */
 
@@ -626,27 +629,36 @@ skip: ;
     if(!isatty(fileno(stdin))){  /* if stdin is redirected from a file */
         fp_in = stdin;
         fnum++;
+        fprintf(stderr, "[DEBUG] non-empty stdin\n");
     }
     if(!isatty(fileno(stdout))){ /* if stdout is redirected to a file */
         fp_out = stdout;
         fnum++;
+        fprintf(stderr, "[DEBUG] redirected stdout\n");
     }
     if(fnum != 2){
         len = strlen(argv[argc-1]);
         if(len >= MAX_PATH-5 || strlen(argv[i-1]) >= MAX_PATH-5)
             error("Too long filename");
     }
+    fprintf(stderr, "[DEBUG] fnum %d\n", fnum);
 
     switch(argc - i){ /* number of non-optional arguments */
         case 0:
             if(fp_in == NULL)
                 /* infile not given, empty stdin; nothing I can do */
+{
+                fprintf(stderr, "[DEBUG] point 1\n");
                 usage(1);
+}
             if(fp_out == NULL){
                 /* outfile not given, free stdout;
                    binary cannot be written, text is fine */
                 if((f_mode & EXE2INDEP) || f_mode == EXE2DVI)
+{
+                    fprintf(stderr, "[DEBUG] point B\n");
                     usage(1);
+}
                 fp_out = stdout;
             }
             break;
@@ -654,12 +666,18 @@ skip: ;
         case 1:
             if(fnum == 2)   /* non-empty stdin, redirected stdout */
                 /* [TODO] ??? */
+{
+                fprintf(stderr, "[DEBUG] point C\n");
                 usage(1);
+}
             if(!fnum){  /* empty stdin, free stdout */
                 /* if EXE2DVI, the only argument might be outfile,
                    but no input available; nothing I can do */
                 if(f_mode == EXE2DVI)
+{
+                    fprintf(stderr, "[DEBUG] point D\n");
                     usage(1);
+}
                 /* otherwise, the only argument should be infile */
                 strcpy(infile, argv[argc-1]);
                 /* outfile not given;
@@ -686,8 +704,12 @@ skip: ;
                 break;
             }   /* else non-empty stdin already given, confused! */
         default:
-            usage(1);
+{
+                fprintf(stderr, "[DEBUG] point E\n");
+                usage(1);
+}
     }
+    fprintf(stderr, "[DEBUG] point 1\n");
 #ifndef UNIX
     if(fp_out && (f_mode == EXE2DVI || (f_mode & EXE2INDEP)))
         setmode( fileno( stdout ), O_BINARY);
@@ -734,6 +756,7 @@ skip: ;
         dvi_info.file_name = infile;
     }
 
+    fprintf(stderr, "[DEBUG] point 2\n");
     /* [TODO] comments not added yet */
     if(argc - i == 1){
         if((f_mode & EXE2INDEP) && !fnum){
