@@ -55,10 +55,15 @@ EXTRA_DIST += \
 
 ## Tests
 ##
-TESTS = tests/upmendex.test
+TESTS = tests/upmendex.test tests/upicu.test
 EXTRA_DIST += $(TESTS)
 
 ## tests/upmendex.test
 EXTRA_DIST += tests/foo.idx tests/foo.ind \
 	tests/uni.idx tests/uni.dict tests/uni.ist tests/uni.ind
 DISTCLEANFILES = foo.* uni.*
+
+## tests/upicu.test
+EXTRA_DIST += tests/icu.tex \
+	tests/icu.idx tests/icu.ind tests/icu.ilg
+DISTCLEANFILES += icu.*

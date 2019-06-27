@@ -603,9 +603,10 @@ nodist_EXTRA_upmendex_SOURCES = dummy.cxx
 LDADD = $(KPATHSEA_LIBS) $(ICU_LIBS) $(ICU_LIBS_EXTRA)
 EXTRA_DIST = COPYRIGHT indexsty upmendex.ja.txt $(TESTS) tests/foo.idx \
 	tests/foo.ind tests/uni.idx tests/uni.dict tests/uni.ist \
-	tests/uni.ind
-TESTS = tests/upmendex.test
-DISTCLEANFILES = foo.* uni.*
+	tests/uni.ind tests/icu.tex tests/icu.idx tests/icu.ind \
+	tests/icu.ilg
+TESTS = tests/upmendex.test tests/upicu.test
+DISTCLEANFILES = foo.* uni.* icu.*
 all: c-auto.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 

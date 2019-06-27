@@ -1,0 +1,16 @@
+#! /bin/sh -vx
+# $Id$
+# Copyright 2019 Karl Berry <tex-live@tug.org>
+# You may freely use, modify and/or distribute this file.
+
+TEXMFCNF=$srcdir/../kpathsea
+export TEXMFCNF
+
+rm -f icu.*
+
+./upmendex $srcdir/tests/icu.idx -o icu.ind1 -t icu.ilg1 \
+	&& diff $srcdir/tests/icu.ind icu.ind1 || exit 1
+
+cat $srcdir/tests/icu.idx | ./upmendex >icu.ind2 2>icu.ilg2 \
+	&& diff $srcdir/tests/icu.ind icu.ind2 || exit 1
+
