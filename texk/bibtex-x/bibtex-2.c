@@ -2942,6 +2942,7 @@ we use "-o" to indicate the rule of conpare.             23/sep/2009
   int32_t ucap = BUF_SIZE+1;
   int32_t uchlen1, uchlen2;
   UErrorCode err1 = U_ZERO_ERROR;
+  int32_t * pNumSubstitutions;
 #else
   Boolean_T		less_than;
   Integer_T		char_ptr;
@@ -2974,8 +2975,8 @@ If err1 != U_ZERO_ERROR, the original functions are used. (06/mar/2019)
   uchlen2 = icu_toUChars(entry_strs, (ptr2 * (ENT_STR_SIZE+1)), lenk2, uch2, ucap);
 */
 
-  u_strFromUTF8WithSub(uch1, ucap, &uchlen1, (char *)&ENTRY_STRS(ptr1, 0), lenk1, 0xfffd, NULL, &err1);
-  if (!U_SUCCESS(err1)) {
+  u_strFromUTF8WithSub(uch1, ucap, &uchlen1, (char *)&ENTRY_STRS(ptr1, 0), lenk1, 0xfffd, pNumSubstitutions, &err1);
+  if (!U_SUCCESS(err1) || pNumSubstitutions > 0) {
     printf("Error in u_strFromUTF8WithSub 1.\n");
 #ifdef TRACE
     if (Flag_trace)
@@ -2985,8 +2986,8 @@ If err1 != U_ZERO_ERROR, the original functions are used. (06/mar/2019)
     err1 = U_ZERO_ERROR;
   }
 
-  u_strFromUTF8WithSub(uch2, ucap, &uchlen2, (char *)&ENTRY_STRS(ptr2, 0), lenk2, 0xfffd, NULL, &err1);
-  if (!U_SUCCESS(err1)) {
+  u_strFromUTF8WithSub(uch2, ucap, &uchlen2, (char *)&ENTRY_STRS(ptr2, 0), lenk2, 0xfffd, pNumSubstitutions, &err1);
+  if (!U_SUCCESS(err1) || pNumSubstitutions > 0) {
     printf("Error in u_strFromUTF8WithSub 2.\n");
 #ifdef TRACE
     if (Flag_trace)
