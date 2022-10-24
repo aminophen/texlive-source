@@ -147,6 +147,9 @@ main (int argc, string *argv)
   } else if (STREQ (output_name, "euptex")) {
     fputs ("#define INITEX\n#define TeX\n#define eupTeX\n", out);
     coerce = "euptexcoerce.h";
+  } else if (STREQ (output_name, "zptex")) {
+    fputs ("#define INITEX\n#define TeX\n#define zpTeX\n", out);
+    coerce = "zptexcoerce.h";
   } else if (STREQ (output_name, "uptex")) {
     fputs ("#define INITEX\n#define TeX\n#define upTeX\n", out);
     coerce = "uptexcoerce.h";
@@ -154,7 +157,7 @@ main (int argc, string *argv)
     fputs ("#define INITEX\n#define TeX\n#define XeTeX\n", out);
     coerce = "xetexcoerce.h";
   } else
-    FATAL1 ("Can only split mf, tex, aleph, eptex, euptex, etex, pdftex, ptex, uptex, or xetex,\n not %s", output_name);
+    FATAL1 ("Can only split mf, tex, aleph, eptex, euptex, etex, pdftex, ptex, uptex, zptex, or xetex,\n not %s", output_name);
   
   coerce_len = strlen (coerce);
   

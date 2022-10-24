@@ -764,6 +764,8 @@ enable_uptex
 enable_uptex_synctex
 enable_euptex
 enable_euptex_synctex
+enable_zptex
+enable_zptex_synctex
 enable_aleph
 enable_hitex
 enable_pdftex
@@ -1563,6 +1565,8 @@ Optional Features:
   --disable-uptex-synctex     build upTeX without SyncTeX support
   --disable-euptex          do not compile and install e-upTeX
   --disable-euptex-synctex    build e-upTeX without SyncTeX support
+  --disable-zptex           do not compile and install zpTeX
+  --disable-zptex-synctex     build zpTeX without SyncTeX support
   --disable-aleph           do not compile and install Aleph
   --disable-hitex           do not compile and install HiTeX
   --disable-pdftex          do not compile and install pdfTeX
@@ -4556,6 +4560,28 @@ then :
 fi
 
 test "x$enable_web2c:$enable_euptex" = xyes:yes && {
+  need_ptexenc=yes
+  need_zlib=yes
+}
+# Check whether --enable-zptex was given.
+if test ${enable_zptex+y}
+then :
+  enableval=$enable_zptex;
+fi
+case $enable_zptex in #(
+  yes | no) :
+     ;; #(
+  *) :
+    enable_zptex=yes ;;
+esac
+
+# Check whether --enable-zptex-synctex was given.
+if test ${enable_zptex_synctex+y}
+then :
+  enableval=$enable_zptex_synctex;
+fi
+
+test "x$enable_web2c:$enable_zptex" = xyes:yes && {
   need_ptexenc=yes
   need_zlib=yes
 }
