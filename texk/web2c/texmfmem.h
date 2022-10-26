@@ -63,7 +63,7 @@
 */
 
 /* Aleph is sufficiently different to separate the definition. */
-#if !defined(Aleph) && !defined(pTeX) && !defined(epTeX) && !defined(eupTeX) && !defined(upTeX) && !defined(zpTeX)
+#if !defined(Aleph) && !defined(pTeX) && !defined(epTeX) && !defined(eupTeX) && !defined(upTeX) && !defined(npTeX)
 
 typedef union
 {
@@ -257,4 +257,4 @@ typedef union
 
 #define gr gg.GLUE
 
-#endif /* Aleph || pTeX || epTeX || eupTeX || upTeX || zpTeX */
+#endif /* Aleph || pTeX || epTeX || eupTeX || upTeX || npTeX */

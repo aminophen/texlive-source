@@ -830,10 +830,10 @@ HITEX_FALSE
 HITEX_TRUE
 ALEPH_FALSE
 ALEPH_TRUE
-ZPTEX_SYNCTEX_FALSE
-ZPTEX_SYNCTEX_TRUE
-ZPTEX_FALSE
-ZPTEX_TRUE
+NPTEX_SYNCTEX_FALSE
+NPTEX_SYNCTEX_TRUE
+NPTEX_FALSE
+NPTEX_TRUE
 EUPTEX_SYNCTEX_FALSE
 EUPTEX_SYNCTEX_TRUE
 EUPTEX_FALSE
@@ -1054,8 +1054,8 @@ enable_uptex
 enable_uptex_synctex
 enable_euptex
 enable_euptex_synctex
-enable_zptex
-enable_zptex_synctex
+enable_nptex
+enable_nptex_synctex
 enable_aleph
 enable_hitex
 enable_pdftex
@@ -1799,8 +1799,8 @@ Optional Features:
   --disable-uptex-synctex   build upTeX without SyncTeX support
   --disable-euptex        do not compile and install e-upTeX
   --disable-euptex-synctex  build e-upTeX without SyncTeX support
-  --disable-zptex         do not compile and install zpTeX
-  --disable-zptex-synctex   build zpTeX without SyncTeX support
+  --disable-nptex         do not compile and install npTeX
+  --disable-nptex-synctex   build npTeX without SyncTeX support
   --disable-aleph         do not compile and install Aleph
   --disable-hitex         do not compile and install HiTeX
   --disable-pdftex        do not compile and install pdfTeX
@@ -2136,7 +2136,7 @@ else $as_nop
 #define $2 innocuous_$2
 
 /* System header to define __stub macros and hopefully few prototypes,
-   which can conflict with char $2 (void); below.  */
+   which can conflict with char $2 (); below.  */
 
 #include <limits.h>
 #undef $2
@@ -2147,7 +2147,7 @@ else $as_nop
 #ifdef __cplusplus
 extern "C"
 #endif
-char $2 (void);
+char $2 ();
 /* The GNU C library defines this for functions which it implements
     to always fail with ENOSYS.  Some functions are actually named
     something starting with __ and the normal name is an alias.  */
@@ -13778,14 +13778,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen (void);
+   builtin and then its argument prototype would still apply.  */
+char dlopen ();
 int
 main (void)
 {
@@ -13846,14 +13840,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char shl_load (void);
+   builtin and then its argument prototype would still apply.  */
+char shl_load ();
 int
 main (void)
 {
@@ -13896,14 +13884,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen (void);
+   builtin and then its argument prototype would still apply.  */
+char dlopen ();
 int
 main (void)
 {
@@ -13941,14 +13923,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen (void);
+   builtin and then its argument prototype would still apply.  */
+char dlopen ();
 int
 main (void)
 {
@@ -13986,14 +13962,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dld_link (void);
+   builtin and then its argument prototype would still apply.  */
+char dld_link ();
 int
 main (void)
 {
@@ -14747,14 +14717,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char opendir (void);
+   builtin and then its argument prototype would still apply.  */
+char opendir ();
 int
 main (void)
 {
@@ -14813,14 +14777,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char opendir (void);
+   builtin and then its argument prototype would still apply.  */
+char opendir ();
 int
 main (void)
 {
@@ -19866,25 +19824,25 @@ test "x$enable_web2c:$enable_euptex" = xyes:yes && {
   need_ptexenc=yes
   need_zlib=yes
 }
-# Check whether --enable-zptex was given.
-if test ${enable_zptex+y}
+# Check whether --enable-nptex was given.
+if test ${enable_nptex+y}
 then :
-  enableval=$enable_zptex;
+  enableval=$enable_nptex;
 fi
-case $enable_zptex in #(
+case $enable_nptex in #(
   yes | no) :
      ;; #(
   *) :
-    enable_zptex=yes ;;
+    enable_nptex=yes ;;
 esac
 
-# Check whether --enable-zptex-synctex was given.
-if test ${enable_zptex_synctex+y}
+# Check whether --enable-nptex-synctex was given.
+if test ${enable_nptex_synctex+y}
 then :
-  enableval=$enable_zptex_synctex;
+  enableval=$enable_nptex_synctex;
 fi
 
-test "x$enable_web2c:$enable_zptex" = xyes:yes && {
+test "x$enable_web2c:$enable_nptex" = xyes:yes && {
   need_ptexenc=yes
   need_zlib=yes
 }
@@ -21467,14 +21425,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char connect (void);
+   builtin and then its argument prototype would still apply.  */
+char connect ();
 int
 main (void)
 {
@@ -21640,14 +21592,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen (void);
+   builtin and then its argument prototype would still apply.  */
+char dlopen ();
 int
 main (void)
 {
@@ -21720,14 +21666,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dlopen (void);
+   builtin and then its argument prototype would still apply.  */
+char dlopen ();
 int
 main (void)
 {
@@ -21808,14 +21748,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char gethostbyname (void);
+   builtin and then its argument prototype would still apply.  */
+char gethostbyname ();
 int
 main (void)
 {
@@ -21873,14 +21807,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char hstrerror (void);
+   builtin and then its argument prototype would still apply.  */
+char hstrerror ();
 int
 main (void)
 {
@@ -21938,14 +21866,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char inet_aton (void);
+   builtin and then its argument prototype would still apply.  */
+char inet_aton ();
 int
 main (void)
 {
@@ -22004,14 +21926,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char nanosleep (void);
+   builtin and then its argument prototype would still apply.  */
+char nanosleep ();
 int
 main (void)
 {
@@ -22666,34 +22582,34 @@ else
   EUPTEX_SYNCTEX_TRUE='#'
   EUPTEX_SYNCTEX_FALSE=
 fi
- if test "x$enable_zptex" = xyes; then
-  ZPTEX_TRUE=
-  ZPTEX_FALSE='#'
+ if test "x$enable_nptex" = xyes; then
+  NPTEX_TRUE=
+  NPTEX_FALSE='#'
 else
-  ZPTEX_TRUE='#'
-  ZPTEX_FALSE=
+  NPTEX_TRUE='#'
+  NPTEX_FALSE=
 fi
 
-case $enable_native_texlive_build:$enable_zptex_synctex in #(
+case $enable_native_texlive_build:$enable_nptex_synctex in #(
   yes:yes | no:yes | no:no) :
      ;; #(
   *) :
-    if test -z "$enable_zptex_synctex"
+    if test -z "$enable_nptex_synctex"
 then :
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Assuming \`--enable-zptex-synctex=yes'" >&5
-printf "%s\n" "$as_me: Assuming \`--enable-zptex-synctex=yes'" >&6;}
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: Assuming \`--enable-nptex-synctex=yes'" >&5
+printf "%s\n" "$as_me: Assuming \`--enable-nptex-synctex=yes'" >&6;}
 else $as_nop
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: Enforcing \`--enable-zptex-synctex=yes' (native TeX Live build)" >&5
-printf "%s\n" "$as_me: WARNING: Enforcing \`--enable-zptex-synctex=yes' (native TeX Live build)" >&2;}
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: Enforcing \`--enable-nptex-synctex=yes' (native TeX Live build)" >&5
+printf "%s\n" "$as_me: WARNING: Enforcing \`--enable-nptex-synctex=yes' (native TeX Live build)" >&2;}
 fi
-         enable_zptex_synctex=yes ;;
+         enable_nptex_synctex=yes ;;
 esac
- if test "x$enable_zptex_synctex" = xyes; then
-  ZPTEX_SYNCTEX_TRUE=
-  ZPTEX_SYNCTEX_FALSE='#'
+ if test "x$enable_nptex_synctex" = xyes; then
+  NPTEX_SYNCTEX_TRUE=
+  NPTEX_SYNCTEX_FALSE='#'
 else
-  ZPTEX_SYNCTEX_TRUE='#'
-  ZPTEX_SYNCTEX_FALSE=
+  NPTEX_SYNCTEX_TRUE='#'
+  NPTEX_SYNCTEX_FALSE=
 fi
  if test "x$enable_aleph" = xyes; then
   ALEPH_TRUE=
@@ -23348,14 +23264,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char XOpenDisplay (void);
+   builtin and then its argument prototype would still apply.  */
+char XOpenDisplay ();
 int
 main (void)
 {
@@ -23381,14 +23291,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dnet_ntoa (void);
+   builtin and then its argument prototype would still apply.  */
+char dnet_ntoa ();
 int
 main (void)
 {
@@ -23428,14 +23332,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char dnet_ntoa (void);
+   builtin and then its argument prototype would still apply.  */
+char dnet_ntoa ();
 int
 main (void)
 {
@@ -23495,14 +23393,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char gethostbyname (void);
+   builtin and then its argument prototype would still apply.  */
+char gethostbyname ();
 int
 main (void)
 {
@@ -23542,14 +23434,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char gethostbyname (void);
+   builtin and then its argument prototype would still apply.  */
+char gethostbyname ();
 int
 main (void)
 {
@@ -23605,14 +23491,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char connect (void);
+   builtin and then its argument prototype would still apply.  */
+char connect ();
 int
 main (void)
 {
@@ -23661,14 +23541,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char remove (void);
+   builtin and then its argument prototype would still apply.  */
+char remove ();
 int
 main (void)
 {
@@ -23717,14 +23591,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char shmat (void);
+   builtin and then its argument prototype would still apply.  */
+char shmat ();
 int
 main (void)
 {
@@ -23775,14 +23643,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char IceConnectionNumber (void);
+   builtin and then its argument prototype would still apply.  */
+char IceConnectionNumber ();
 int
 main (void)
 {
@@ -23832,14 +23694,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char XextCreateExtension (void);
+   builtin and then its argument prototype would still apply.  */
+char XextCreateExtension ();
 int
 main (void)
 {
@@ -24209,14 +24065,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char yywrap (void);
+   builtin and then its argument prototype would still apply.  */
+char yywrap ();
 int
 main (void)
 {
@@ -24329,14 +24179,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char sigemptyset (void);
+   builtin and then its argument prototype would still apply.  */
+char sigemptyset ();
 int
 main (void)
 {
@@ -24483,14 +24327,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 
 /* Override any GCC internal prototype to avoid an error.
    Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char pow (void);
+   builtin and then its argument prototype would still apply.  */
+char pow ();
 int
 main (void)
 {
@@ -25081,23 +24919,22 @@ unsigned short int ascii_mm[] =
 		int use_ebcdic (int i) {
 		  return ebcdic_mm[i] + ebcdic_ii[i];
 		}
-		int
-		main (int argc, char **argv)
-		{
-		  /* Intimidate the compiler so that it does not
-		     optimize the arrays away.  */
-		  char *p = argv[0];
-		  ascii_mm[1] = *p++; ebcdic_mm[1] = *p++;
-		  ascii_ii[1] = *p++; ebcdic_ii[1] = *p++;
-		  return use_ascii (argc) == use_ebcdic (*p);
-		}
+		extern int foo;
+
+int
+main (void)
+{
+return use_ascii (foo) == use_ebcdic (foo);
+  ;
+  return 0;
+}
 _ACEOF
-if ac_fn_c_try_link "$LINENO"
+if ac_fn_c_try_compile "$LINENO"
 then :
-  if grep BIGenDianSyS conftest$ac_exeext >/dev/null; then
+  if grep BIGenDianSyS conftest.$ac_objext >/dev/null; then
 	      ac_cv_c_bigendian=yes
 	    fi
-	    if grep LiTTleEnDian conftest$ac_exeext >/dev/null ; then
+	    if grep LiTTleEnDian conftest.$ac_objext >/dev/null ; then
 	      if test "$ac_cv_c_bigendian" = unknown; then
 		ac_cv_c_bigendian=no
 	      else
@@ -25106,8 +24943,7 @@ then :
 	      fi
 	    fi
 fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
 else $as_nop
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
@@ -28673,12 +28509,12 @@ if test -z "${EUPTEX_SYNCTEX_TRUE}" && test -z "${EUPTEX_SYNCTEX_FALSE}"; then
   as_fn_error $? "conditional \"EUPTEX_SYNCTEX\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${ZPTEX_TRUE}" && test -z "${ZPTEX_FALSE}"; then
-  as_fn_error $? "conditional \"ZPTEX\" was never defined.
+if test -z "${NPTEX_TRUE}" && test -z "${NPTEX_FALSE}"; then
+  as_fn_error $? "conditional \"NPTEX\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${ZPTEX_SYNCTEX_TRUE}" && test -z "${ZPTEX_SYNCTEX_FALSE}"; then
-  as_fn_error $? "conditional \"ZPTEX_SYNCTEX\" was never defined.
+if test -z "${NPTEX_SYNCTEX_TRUE}" && test -z "${NPTEX_SYNCTEX_FALSE}"; then
+  as_fn_error $? "conditional \"NPTEX_SYNCTEX\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${ALEPH_TRUE}" && test -z "${ALEPH_FALSE}"; then

@@ -1,12 +1,12 @@
-/* zptexextra.c: Hand-coded routines for zpTeX.
+/* nptexextra.c: Hand-coded routines for npTeX.
 
    This file is public domain.  */
 
-#define	EXTERN /* Instantiate data from zptexd.h here.  */
-#define DLLPROC dllzptexmain
+#define	EXTERN /* Instantiate data from nptexd.h here.  */
+#define DLLPROC dllnptexmain
 
 /* This file defines TeX and eupTeX.  */
-#include <zptexd.h>
+#include <nptexd.h>
 
 /* Hand-coded routines for TeX or Metafont in C.  */
 #include <lib/texmfmp.c>

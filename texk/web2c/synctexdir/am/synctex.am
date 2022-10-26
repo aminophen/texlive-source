@@ -286,16 +286,16 @@ euptex_CPPFLAGS += -D__SyncTeX__ -DSYNCTEX_ENGINE_H=\"synctex-euptex.h\"
 
 endif EUPTEX_SYNCTEX
 
-## SyncTeX infrastructure: zpTeX
+## SyncTeX infrastructure: npTeX
 
-if ZPTEX_SYNCTEX
+if NPTEX_SYNCTEX
 
-zptex_CPPFLAGS += -I$(srcdir)/synctexdir $(ZLIB_INCLUDES)
+nptex_CPPFLAGS += -I$(srcdir)/synctexdir $(ZLIB_INCLUDES)
 
-zptex_LDADD += $(ZLIB_LIBS)
-zptex_prereq += $(ZLIB_DEPEND)
+nptex_LDADD += $(ZLIB_LIBS)
+nptex_prereq += $(ZLIB_DEPEND)
 
-zptex_ch_synctex = \
+nptex_ch_synctex = \
 	synctexdir/synctex-def.ch0 \
 	synctexdir/synctex-ep-mem.ch0 \
 	synctexdir/synctex-mem.ch0 \
@@ -308,15 +308,15 @@ zptex_ch_synctex = \
 	synctexdir/synctex-e-rec.ch0 \
 	synctexdir/synctex-p-rec.ch1
 
-dist_zptex_SOURCES += \
+dist_nptex_SOURCES += \
 	synctexdir/synctex.c \
 	synctexdir/synctex.h \
 	synctexdir/synctex-common.h \
-	synctexdir/synctex-zptex.h
+	synctexdir/synctex-nptex.h
 
-zptex_CPPFLAGS += -D__SyncTeX__ -DSYNCTEX_ENGINE_H=\"synctex-zptex.h\"
+nptex_CPPFLAGS += -D__SyncTeX__ -DSYNCTEX_ENGINE_H=\"synctex-nptex.h\"
 
-endif ZPTEX_SYNCTEX
+endif NPTEX_SYNCTEX
 
 ## SyncTeX infrastructure: pdfTeX
 

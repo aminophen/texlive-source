@@ -1,22 +1,22 @@
-/* zptexextra.h: banner etc. for zpTeX.
+/* nptexextra.h: banner etc. for npTeX.
 
-   This is included by zpTeX, from euptexextra.c
+   This is included by npTeX, from euptexextra.c
 */
 
 #include <etexdir/etex_version.h> /* for ETEX_VERSION */
 
-#define BANNER "This is zpTeX, Version 3.141592653-" ETEX_VERSION "-zp0.0.00"
+#define BANNER "This is npTeX, Version 3.141592653-" ETEX_VERSION "-np0.0.00"
 #define COPYRIGHT_HOLDER "D.E. Knuth"
 #define AUTHOR "Peter Breitenlohner"
-#define PROGRAM_HELP ZPTEXHELP
+#define PROGRAM_HELP NPTEXHELP
 #define BUG_ADDRESS "issue@texjp.org"
 #define DUMP_VAR TEXformatdefault
 #define DUMP_LENGTH_VAR formatdefaultlength
 #define DUMP_OPTION "fmt"
 #define DUMP_EXT ".fmt"
 #define INPUT_FORMAT kpse_tex_format
-#define INI_PROGRAM "inizptex"
-#define VIR_PROGRAM "virzptex"
+#define INI_PROGRAM "ininptex"
+#define VIR_PROGRAM "virnptex"
 
 #ifdef Xchr
 #undef Xchr

@@ -11,7 +11,7 @@
 \def\eTeX{$\varepsilon$-\TeX}
 \def\epTeX{$\varepsilon$-\pTeX}
 \def\eupTeX{$\varepsilon$-\upTeX}
-\def\zpTeX{z\pTeX}
+\def\npTeX{n\pTeX}
 @z
 
 @x
@@ -36,17 +36,17 @@
 @d upTeX_revision==".29"
 @d upTeX_version_string=='-u1.29' {current u\pTeX\ version}
 @#
-@d zpTeX_version=0
-@d zpTeX_minor_version=0
-@d zpTeX_revision==".0"
-@d zpTeX_version_string==eTeX_version_string, '-zp0.0.00'
+@d npTeX_version=0
+@d npTeX_minor_version=0
+@d npTeX_revision==".0"
+@d npTeX_version_string==eTeX_version_string, '-np0.0.00'
 @#
-@d zpTeX_banner=='This is zpTeX, Version 3.141592653',zpTeX_version_string
-@d zpTeX_banner_k==zpTeX_banner
-  {printed when \zpTeX\ starts}
+@d npTeX_banner=='This is npTeX, Version 3.141592653',npTeX_version_string
+@d npTeX_banner_k==npTeX_banner
+  {printed when \npTeX\ starts}
 @#
-@d banner==zpTeX_banner
-@d banner_k==zpTeX_banner_k
+@d banner==npTeX_banner
+@d banner_k==npTeX_banner_k
 @z
 
 @x

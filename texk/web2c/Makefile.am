@@ -279,8 +279,8 @@ include $(srcdir)/uptexdir/am/uptex.am
 ## e-upTeX
 include $(srcdir)/euptexdir/am/euptex.am
 
-## zpTeX
-include $(srcdir)/zptexdir/am/zptex.am
+## npTeX
+include $(srcdir)/nptexdir/am/nptex.am
 
 ## hiTeX
 include $(srcdir)/hitexdir/am/hitex.am

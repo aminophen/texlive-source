@@ -48,7 +48,7 @@ Thu Jun 30 11:00:00 UTC 2011
 
 */
 
-#include "zptexd.h"
+#include "nptexd.h"
 
 #define box_node_size (8+synchronization_field_size)
 

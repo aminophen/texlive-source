@@ -266,13 +266,13 @@ const_string EUPTEXHELP[] = {
 };
 #endif /* eupTeX */
 
-#ifdef zpTeX
-const_string ZPTEXHELP[] = {
-    "Usage: zptex [OPTION]... [TEXNAME[.tex]] [COMMANDS]",
-    "   or: zptex [OPTION]... \\FIRST-LINE",
-    "   or: zptex [OPTION]... &FMT ARGS",
-    "  Run zpTeX on TEXNAME, usually creating TEXNAME.dvi.",
-    "  Any remaining COMMANDS are processed as zpTeX input, after TEXNAME is read.",
+#ifdef npTeX
+const_string NPTEXHELP[] = {
+    "Usage: nptex [OPTION]... [TEXNAME[.tex]] [COMMANDS]",
+    "   or: nptex [OPTION]... \\FIRST-LINE",
+    "   or: nptex [OPTION]... &FMT ARGS",
+    "  Run npTeX on TEXNAME, usually creating TEXNAME.dvi.",
+    "  Any remaining COMMANDS are processed as npTeX input, after TEXNAME is read.",
     "  If the first line of TEXNAME is %&FMT, and FMT is an existing .fmt file,",
     "  use it.  Else use `NAME.fmt', where NAME is the program invocation name,",
     "  most commonly `euptex'.",
@@ -324,7 +324,7 @@ const_string ZPTEXHELP[] = {
     "-version                print version information and exit.",
     NULL
 };
-#endif /* zpTeX */
+#endif /* npTeX */
 
 #ifdef onlyMF
 const_string MFHELP[] = {
